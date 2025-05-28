@@ -17,6 +17,7 @@ def inserir(produto: Produto) -> Optional[int]:
             produto.descricao, 
             produto.preco, 
             produto.quantidade))
+        return cursor.lastrowid
 
 
 def obter_todos() -> list[Produto]:
@@ -46,5 +47,4 @@ def obter_por_id(id:int) -> Optional[Produto]:
                 preco=row["preco"], 
                 quantidade=row["quantidade"])
         return produto
-    
     
